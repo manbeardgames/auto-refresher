@@ -1,0 +1,76 @@
+{
+  "name": "auto-refresher",
+  "version": "1.1.0",
+  "description": "A jQuery plugin to auto-refresh a page, with a visual progress bar.",
+  "keywords": [
+    "jquery",
+    "jquery-plugin",
+    "plugins",
+    "auto-refresher",
+    "refresher"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manbeardgames/auto-refresher.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manbeardgames/auto-refresher/issues"
+  },
+  "author": {
+    "name": "Christopher Whitley",
+    "email": "chris@manbeardgames.com",
+    "url": "https://github.com/manbeardgames"
+  },
+  "homepage": "https://github.com/manbeardgames/auto-refresher#readme",
+  "contributors": [
+    {
+      "name": "Christopher Whitley",
+      "email": "chris@manbeardgames.com",
+      "url": "https://github.com/manbeardgames"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.3",
+    "@babel/core": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "eslint": "^6.5.1",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.12.0",
+    "rimraf": "^3.0.0",
+    "stylelint": "^11.0.0",
+    "stylelint-config-recommended": "^3.0.0"
+  },
+  "scripts": {
+    "makedir:only:js": "mkdirp ./dist/js",
+    "makedir:only:css": "mkdirp ./dist/css",
+    "makedir:all": "npm run makedir:only:css && npm run makedir:only:js",
+
+    "removedir:only:js": "rimraf ./dist/js",
+    "removedir:only:css": "rimraf ./dist/css",
+    "removedir:all": "rimraf ./dist",
+
+    "clean:only:js": "npm run removedir:only:js && npm run makedir:only:js",
+    "clean:only:css": "npm run removedir:only:css && npm run makedir:only:css",
+    "clean:all": "npm run removedir:all && npm run makedir:all",    
+
+    "rebuild:only:css": "npm run clean:only:css && npm run build:only:js",
+    "rebuild:only:js": "npm run clean:only:js && npm run build:only:js",
+    "rebuild:all": "npm run clean:all && npm run build:all",
+
+    "build:js:min": "babel src/js/autorefresher.js --out-file dist/js/autorefresher.min.js --no-comments --minified",
+    "build:js:expanded": "babel src/js/autorefresher.js --out-file dist/js/autorefresher.js --no-comments",
+    "lint:js": "eslint src/js/",
+    "build:only:js": "npm run lint:js && npm run build:js:expanded && npm run build:js:min",
+
+    "build:css:min": "node-sass src/scss/autorefresher.scss dist/css/autorefresher.min.css --output-style compressed --source-map true",
+    "build:css:expanded": "node-sass src/scss/autorefresher.scss dist/css/autorefresher.css --output-style expanded",
+    "lint:scss": "stylelint src/scss/*.scss",
+    "build:only:css": "npm run lint:scss && npm run build:css:expanded && npm run build:css:min",
+
+    "build:all": "npm run build:only:css && npm run build:only:js"
+  }
+}

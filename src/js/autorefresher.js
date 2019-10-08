@@ -3,7 +3,7 @@
 ;( function( $ ){
     "use strict";
 
-    ( function ( $, window, document, undefined) {
+    ( function ( $, window) {
 		// undefined is used here as the undefined global variable in ECMAScript 3 is
 		// mutable (ie. it can be changed by someone else). undefined isn't really being
 		// passed in so we can ensure the value of it is truly undefined. In ES5, undefined
@@ -118,7 +118,7 @@
             //  execute the settings.callback function after the period of time
             //  defined by settings.seconds has passed.
             _startAutoRefresh: function() {
-                let self = this
+                let self = this;
 
                 //  Don't continue if we are already in progress
                 if( this.inProgress ) {
@@ -218,7 +218,7 @@
 
             //  The callback function to execute when the timeout ends.
             callback: function() {
-                location.reload();
+                window.location.reload();
             },
 
             //  Should the start and stop buttons be added.
@@ -248,5 +248,5 @@
             //  The ID selector of the element to insert the time remaining value
             timeRemainingId: "#auto-refresher-time-remaining"
         };
-    } )( $, window, document );
+    } )( $, window );
 } )( jQuery );
