@@ -1,0 +1,36 @@
+{
+  "name": "auto-refresher",
+  "version": "1.1.0",
+  "description": "A jQuery plugin to auto-refresh a page, with a visual progress bar.",
+  "keywords": [
+    "jquery",
+    "jquery-plugin",
+    "plugins",
+    "auto-refresher",
+    "refresher"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manbeardgames/auto-refresher.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manbeardgames/auto-refresher/issues"
+  },
+  "author": {
+    "name": "Christopher Whitley",
+    "email": "project.dart.dev@gmail.com",
+    "url": "https://github.com/manbeardgames"
+  },
+  "homepage": "https://github.com/manbeardgames/auto-refresher#readme",
+  "contributors": [
+    {
+      "name": "Christopher Whitley",
+      "email": "project.dart.dev@gmail.com",
+      "url": "https://github.com/manbeardgames"
+    }
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
