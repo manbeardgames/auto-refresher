@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <link rel="stylesheet" 
+          type="text/css" 
+          href="//fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700">
+
+    <!-- AutoRefresher (required)-->
+    <link rel="stylesheet"
+          type="text/css"
+          href="../dist/css/autorefresher.min.css">
+
+    <!-- Site Styles -->
+    <link rel="stylesheet"
+          type="text/css"
+          href="site.css">
+
+    <title>Auto-Refresher: A jQuery Plugin</title>
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <h1 class="site_header">Auto-Refresher</h1>
+            <span class="sub_header">jQuery plugin to auto refresh page with visual progress bar.</span>
+        </div>
+    </header>
+
+    <main role="content">
+        <section class="wrapper">
+            <span>Time Remaining: <span id="auto-refresher-time-remaining"></span></span>
+            <div id="auto-refresher"></div>
+        </section>
+    </main>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- AutoRefresh JS,-->
+    <script src="../dist/js/autorefresher.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#auto-refresher').autoRefresher({
+                //  This is the amount of time, in seconds, before the refresh takes place.
+                //  Value must be a positive integer.
+                seconds: 60,
+                //  You can provide any function to callback to once the amount of time to wait
+                //  has been reached if you'd rather it do something other than refresh the page.
+                //  If nothing is provided however, the page is just refreshed.
+                callback: function () {
+                    location.reload();
+                },
+                //  The height of the progress bar. Values must be a positive number + css unit
+                //  of measurement (e.g. %, px, em, rem). Default is 7px
+                progressBarHeight: '7px',
+                //  If showControls is true, then the stop and start buttons are added
+                showControls: true,
+                //  You can apply css classes to the stop button, such as bootstrap
+                //  classes or your own custom ones.  If no value is given, a default
+                //  style is applied (refer to auto-refresher-button in autorefresher.css)
+                stopButtonClass: null,
+                //  You can set the inner section of the stop button using this
+                //  This only applies if showControls is true
+                stopButtonInner: 'Stop',
+                //  You can apply css classes to the start button, such as bootstrap
+                //  classes or your own custom ones.  If no value is given, a default
+                //  style is applied (refer to auto-refresher-button in autorefresher.css)
+                startButtonClass: null,
+                //  You can set the inner section of the start button using this
+                //  This only applies if showControls is true
+                startButtonInner: 'Start',
+                //  The id of a DOM element to inject the number of seconds remaining
+                timeRemainingId: '#auto-refresher-time-remaining'
+            });
+        });
+    </script>
+</body>
+
+</html>
