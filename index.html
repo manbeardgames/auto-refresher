@@ -5,21 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="Auto-Refresher" />
+    <meta property="og:description" content="A jQuery plugin to auto refresh page with visual progress bar." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://manbeardgames.com/auto-refresher" />
+    <meta property="og:image" content="https://manbeardgames.com/auto-refresher/imgs/logo.png" />
 
+    <link rel="shortcut icon" href="imgs/logo.png">
 
     <link rel="stylesheet" 
           type="text/css" 
           href="//fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700">
 
+    <!-- FontAwesome (not required) -->
+    <link rel="stylesheet" 
+          type="text/css"
+          href="css/vendor/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" 
+          type="text/css"
+          href="css/vendor/fontawesome/solid.min.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/vendor/fontawesome/brands.min.css">
+
     <!-- AutoRefresher (required)-->
     <link rel="stylesheet"
           type="text/css"
-          href="../dist/css/autorefresher.min.css">
+          href="css/autorefresher.min.css">
 
     <!-- Site Styles -->
     <link rel="stylesheet"
           type="text/css"
-          href="site.css">
+          href="css/site.min.css">
 
     <title>Auto-Refresher: A jQuery Plugin</title>
 </head>
@@ -34,17 +51,27 @@
 
     <main role="content">
         <section class="wrapper">
-            <span>Time Remaining: <span id="auto-refresher-time-remaining"></span></span>
+            <span>Time Remaining: <span id="time-remaining"></span></span>
             <div id="auto-refresher"></div>
+        </section>
+
+        <section class="wrapper">
+            <a href="https://github.com/manbeardgames/auto-refresher">
+                <i class="fab fa-github-alt fa-lg"></i>
+                View on GitHub
+            </a>
         </section>
     </main>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jQuery/jquery-2.0.0.min.js">\x3C/script>')
+    </script>
 
     <!-- AutoRefresh JS,-->
-    <script src="../dist/js/autorefresher.min.js"></script>
+    <script src="js/autorefresher.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -69,16 +96,16 @@
                 stopButtonClass: null,
                 //  You can set the inner section of the stop button using this
                 //  This only applies if showControls is true
-                stopButtonInner: 'Stop',
+                stopButtonInner: '<i class="fas fa-stop"></i>',
                 //  You can apply css classes to the start button, such as bootstrap
                 //  classes or your own custom ones.  If no value is given, a default
                 //  style is applied (refer to auto-refresher-button in autorefresher.css)
                 startButtonClass: null,
                 //  You can set the inner section of the start button using this
                 //  This only applies if showControls is true
-                startButtonInner: 'Start',
+                startButtonInner: '<i class="fas fa-play"></i>',
                 //  The id of a DOM element to inject the number of seconds remaining
-                timeRemainingId: '#auto-refresher-time-remaining'
+                timeRemainingId: '#time-remaining'
             });
         });
     </script>

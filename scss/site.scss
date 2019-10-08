@@ -1,0 +1,111 @@
+// ----------------------------------------------------------------------------
+//  Variables
+// ----------------------------------------------------------------------------
+
+//  Colors
+$gray: #3d464d;
+$white: #fff;
+
+$code-text: #fff;
+$code-tag: lightblue;
+$code-attribute: yellow;
+$code-value: darkorange;
+$code-comment: green;
+
+// Typography
+$font-size-base: 1rem !default;
+
+
+// ----------------------------------------------------------------------------
+//  Reset
+// ----------------------------------------------------------------------------
+body {
+    overflow-x: hidden;
+    font-size: $font-size-base;
+}
+
+*, :before, :after {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+}
+
+input, select, button, textarea {
+    -webkit-appearance: none;
+    appearance: none;
+    font: inherit;
+    color:  inherit;
+}
+
+// ----------------------------------------------------------------------------
+//  Base
+// ----------------------------------------------------------------------------
+
+html {
+    font-size: $font-size-base;
+    font-family: "Roboto", Verdana, sans-serif;
+    color: $gray;
+    background-color: $white;
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+
+    overflow: hidden-x;
+    text-align: center;
+}
+
+.wrapper {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+@media (min-width: 650px) {
+    html {
+        height: 100%;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            margin-right: -0.25em;
+        }
+    }
+
+    body {
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 50rem;
+    }
+}
+// ----------------------------------------------------------------------------
+//  Typography
+// ----------------------------------------------------------------------------
+
+h1 {
+    font-size: $font-size-base * 3.25;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    
+    &:visited,
+    &:focus
+    &:hover {
+        color: inherit;
+    }
+
+    font-size: $font-size-base * 1.25;
+}
+
+// ----------------------------------------------------------------------------
+//  Headers
+// ----------------------------------------------------------------------------
+.sub_header {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
