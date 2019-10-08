@@ -34,10 +34,10 @@
     "jquery": "^3.4.1"
   },
   "devDependencies": {
-    "jshint": "^2.10.2"
+    "eslint": "^6.5.1"
   },
   "scripts": {
-      "jshint": "jshint src/js/ || exit 0",
-      "test": "echo \"Error: no test specified\" && exit 1"
+    "jshint": "jshint src/js/ || exit 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

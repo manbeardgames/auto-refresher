@@ -1,6 +1,3 @@
-/* jshint esversion: 6 */
-/* global jQuery, window, document */
-
 //  the semi-colon before function invocation is a safety net against concatenated
 //  scripts and/or other plugins which may not be closed properly.
 ;( function( $ ){
