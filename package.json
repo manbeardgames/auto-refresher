@@ -50,6 +50,5 @@
     "build:css:expanded": "node-sass src/scss/autorefresher.scss dist/css/autorefresher.css --output-style expanded --source-map true",
     "lint:scss": "stylelint src/scss/*.scss",
     "build:css": "npm run lint:scss && npm run build:css:expanded && npm run build:css:min",
-    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
