@@ -121,7 +121,7 @@
             //  execute the settings.callback function after the period of time
             //  defined by settings.seconds has passed.
             _startAutoRefresh: function() {
-                let self = this
+                let self = this;
 
                 //  Don't continue if we are already in progress
                 if( this.inProgress ) {
@@ -221,7 +221,7 @@
 
             //  The callback function to execute when the timeout ends.
             callback: function() {
-                location.reload();
+                window.location.reload();
             },
 
             //  Should the start and stop buttons be added.
