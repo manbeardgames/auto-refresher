@@ -34,10 +34,19 @@
     "jquery": "^3.4.1"
   },
   "devDependencies": {
-    "eslint": "^6.5.1"
+    "eslint": "^6.5.1",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.12.0",
+    "rimraf": "^3.0.0"
   },
   "scripts": {
-    "jshint": "jshint src/js/ || exit 0",
+    "build:dist": "mkdirp ./dist",
+    "clean:dist": "rimraf ./dist",
+    "clean": "npm run clean:dist",
+    "eslint": "eslint src/js/",
+    "build:css:min": "node-sass src/scss/autorefresher.scss dist/css/autorefresher.min.css --output-style compressed --source-map true",
+    "build:css:expanded": "node-sass src/scss/autorefresher.scss dist/css/autorefresher.css --output-style expanded --source-map true",
+    "build:css": "npm run build:css:expanded && npm run build:css:min",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
