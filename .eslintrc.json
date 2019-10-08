@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "jquery": true
     },
     "extends": "eslint:recommended",
     "globals": {
@@ -12,6 +13,7 @@
         "ecmaVersion": 2018
     },
     "rules": {
-        "no-console": ["error", {"allow": ["warn", "error"]}]
+        "no-console": ["error", {"allow": ["warn", "error"]}],
+        "no-extra-semi": "off"
     }
 }
