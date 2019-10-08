@@ -5,7 +5,7 @@ Auto-refresher is a jQuery plugin to auto refresh a page, with a visual progress
 Auto-Refresher is a jQuery plugin, which means it requires jQuery to work.  Ensure that you have setup jQuery correctly in your project.  Visit [https://jquery.com/download/](https://jquery.com/download/) for more information.
 
 ## Installation
-Download latest release: [v1.1.0](https://github.com/manbeardgames/auto-refresher/releases/latest) 
+Download latest release: [v1.2.0](https://github.com/manbeardgames/auto-refresher/releases/latest) 
 
 The download includes the following directories and files
 
@@ -161,6 +161,11 @@ Auto-refresher has two triggers you can use to start and stop the progress bar. 
     </body>
 </html>
 ```
+# Contributing
+If you would like to contribute to this repository, check out [CONTRIBUTING.md](https://github.com/manbeardgames/auto-refresher/blob/master/CONTRIBUTING.md) for more info.
+
+# License
+[MIT License](https://github.com/manbeardgames/auto-refresher/blob/master/LICENSE) © [Christopher Whitley](https://github.com/manbeardgames)
 
 
 
