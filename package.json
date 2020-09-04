@@ -39,7 +39,7 @@
     "@babel/preset-env": "^7.6.3",
     "eslint": "^6.5.1",
     "mkdirp": "^0.5.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "rimraf": "^3.0.0",
     "stylelint": "^11.0.0",
     "stylelint-config-recommended": "^3.0.0"
